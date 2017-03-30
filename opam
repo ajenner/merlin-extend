@@ -1,13 +1,16 @@
-opam-version: "1.2"
+opam-version: "1.3.0~dev2"
 name: "merlin-extend"
 version: "0.3"
 maintainer: "Frederic Bour <frederic.bour@lakaban.net>"
 authors: "Frederic Bour <frederic.bour@lakaban.net>"
-homepage: "https://github.com/let-def/merlin-extend"
-bug-reports: "https://github.com/let-def/merlin-extend"
+homepage: "https://github.com/ajenner/merlin-extend"
+bug-reports: "https://github.com/ajenner/merlin-extend"
 license: "MIT"
-dev-repo: "https://github.com/let-def/merlin-extend.git"
+dev-repo: "https://github.com/ajenner/merlin-extend.git"
 build: [
+  ["cp" "extend_helper.ml" "extend_helper.ml.orig"]
+  ["dash" "-ecx" "cppo -V OCAML:`ocamlc -version` extend_helper.ml | tail -n +3 > extend_helper.ml.1"]
+  ["cp" "extend_helper.ml.1" "extend_helper.ml"]
   [make]
 ]
 available: [ocaml-version >= "4.02.3"]
