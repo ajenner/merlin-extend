@@ -20,4 +20,4 @@ depends: [
   "ocamlfind" {build}
   "cppo" {build}
 ]
-patches: "patch-ocamlmakefile-merlin-extend.0.3"
+patches: ["patch-ocamlmakefile-merlin-extend.0.3"]
