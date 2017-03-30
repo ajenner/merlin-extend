@@ -8,9 +8,6 @@ bug-reports: "https://github.com/ajenner/merlin-extend"
 license: "MIT"
 dev-repo: "https://github.com/ajenner/merlin-extend.git"
 build: [
-  ["cp" "extend_helper.ml" "extend_helper.ml.orig"]
-  ["dash" "-ecx" "cppo -V OCAML:`ocamlc -version` extend_helper.ml | tail -n +3 > extend_helper.ml.1"]
-  ["cp" "extend_helper.ml.1" "extend_helper.ml"]
   [make]
 ]
 available: [ocaml-version >= "4.02.3"]
@@ -20,4 +17,3 @@ depends: [
   "ocamlfind" {build}
   "cppo" {build}
 ]
-patches: ["patch-ocamlmakefile-merlin-extend.0.3"]
